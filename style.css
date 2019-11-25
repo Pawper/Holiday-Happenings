@@ -34,6 +34,11 @@ body {
   background: #222;
   background: url(hicv2017cover_415.jpg) top no-repeat fixed;
 }
+@media (min-width: 416px) {
+  .content {
+    background: url(hicv2017cover.jpg) top no-repeat fixed;
+  }
+}
 @media (min-width: 800px) {
 .content {
   background: url(hicv2017cover_1200.jpg) top no-repeat fixed;
