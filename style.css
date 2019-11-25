@@ -19,6 +19,7 @@ body {
   overflow-x: hidden;
   font-size: 16px;
   background-color: #222;
+  background: url('christmas-dark.png'); /*  This pattern is downloaded from https://www.toptal.com/designers/subtlepatterns/ */
   color: white;
   line-height: 1.3em;
   font-family: 'Lato', sans-serif;
@@ -47,7 +48,7 @@ body {
 @media (min-width: 1200px) {
 .content {
   margin-top: 1rem;
-  border: goldenrod 1px solid;
+  border: #666 1px solid;
   margin-bottom: 1rem;
 }
 }
