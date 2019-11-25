@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Calistoga|Lato&display=swap');
+@import url("https://use.typekit.net/cni7gjf.css");
 
 /* Resets, body & utilities */
 html {
@@ -33,23 +34,16 @@ body {
   width: 100%;
   max-width: 1200px;
   background: #222;
-  background: url(hicv2017cover_415.jpg) top no-repeat fixed;
+  background: url(hicv2017cover_415.jpg) 0px -40px no-repeat fixed;
 }
 @media (min-width: 416px) {
   .content {
-    background: url(hicv2017cover.jpg) top no-repeat fixed;
+    background: url(hicv2017cover.jpg) 0px -40px no-repeat fixed;
   }
 }
 @media (min-width: 800px) {
 .content {
-  background: url(hicv2017cover_1200.jpg) top no-repeat fixed;
-}
-}
-@media (min-width: 1200px) {
-.content {
-  margin-top: 1rem;
-  border: #666 1px solid;
-  margin-bottom: 1rem;
+  background: url(hicv2017cover_1200.jpg) center -160px no-repeat fixed;
 }
 }
 
@@ -82,13 +76,130 @@ a:focus {
 }
 
 /* Top Header & Navigation */
-header.topHeader {
-  background: linear-gradient(rgba(34, 34, 34,1) 85%,rgba(34, 34, 34,0));
-  padding: 1em;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
+.logo {
+  position: absolute;
+  top: 30px;
+  left: 80px;
+  margin-left: 0;
+  text-shadow:
+  -1px -1px 0 rgba(50, 0, 0, 0.5),  
+  1px -1px 0 rgba(50, 0, 0, 0.5),
+ -1px 1px 0 rgba(50, 0, 0, 0.5),
+  1px 1px 0 rgba(50, 0, 0, 0.5);
+}
+.logo .holiday {
+  font-family: sabbath-black, serif;
+  font-weight: 400;
+  font-style: normal;
+  display: block;
+  font-size: 4rem;
+  color: rgb(150, 0, 0);
+}
+.logo .happenings {
+  font-family: old-man-eloquent, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  display: block;
+  color: white;
+  position: absolute;
+  font-size: 3.55rem;
+  top: 40px;
+  left: 50%;
+  margin-left: -55px;
+}
+@media (min-width: 450px) {
+  .logo {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    margin-left: -150px;
+  }
+  .logo .holiday {
+    font-size: 5rem;
+  }
+  .logo .happenings {
+    font-size: 4.5rem;
+    top: 50px;
+    left: 50%;
+    margin-left: -70px;
+  }
+}
+
+.fa-bars {
+  padding: 1rem;
+  background-color: rgb(0, 0, 51);
+  border-radius: 30px;
+  margin: 1rem;
+  position: fixed;
   z-index: 100;
+  top: 0;
+  color: #ccc;
+  border: 1px #ddd outset;
+  box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.5);
+  margin-top: 1rem;
+  transition: box-shadow 0.15s ease-in, transform 0.15s ease-in, border 0.15s ease-in;
+}
+.fa-bars:active,
+.fa-bars:hover {
+  background: linear-gradient(rgba(0, 0, 85,1),rgba(0,0,51,1));
+  border: 2px solid white;
+  box-shadow: 0px 2px 15px 0px rgba(174, 200, 255, 0.75);
+  transform: translate(0px, -2px);
+  transition: box-shadow 0.15s ease-in, transform 0.15s ease-in, border 0.15s ease-in;
+}
+
+.topHeader {
+  width: 100%;
+  max-width: 1200px;
+}
+
+#full-menu {
+  display: none;
+  position: fixed;
+  padding: 1rem;
+  z-index: 99;
+  top: 0;
+  width: calc(100vw - 85px);
+  max-width: calc(1200px - 85px);
+}
+
+#full-menu .external {
+  display: flex;
+}
+
+#full-menu .logo {
+  left: 80px;
+  margin-left: 0;
+}
+#full-menu .logo .holiday {
+  font-size: 4rem;
+}
+#full-menu .logo .happenings {
+  font-size: 3.55rem;
+  top: 40px;
+  left: 50%;
+  margin-left: -55px;
+}
+
+.under-logo {
+  position: absolute;
+  z-index: 100;
+  top: 120px;
+  width: 88vw;
+  max-width: calc(1200px - 2rem);
+}
+
+#cover {
+  display: none;
+  height: 1000vh;
+  width: 100vw;
+  position: fixed;
+  background: url('christmas-dark.png'); /*  This pattern is downloaded from https://www.toptal.com/designers/subtlepatterns/ */
+  opacity: 0.95;
+  backdrop-filter: blur(5px);
+  top: 0;
+  left: 0;
+  z-index: 98;
 }
 
 .hero {
@@ -110,10 +221,6 @@ nav ul.internal {
   gap: 3px;
 }
 
-header.topHeader nav ul {
-  margin-top: 1rem;
-}
-
 nav.rules ul.internal {
   margin: 0;
   display: flex;
@@ -127,13 +234,19 @@ nav.rules li {
 }
 
 nav ul.external {
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   max-width: 600px;
   margin: auto;
 }
+@media (min-width: 665px) {
+  nav ul.external {
+    display: flex;
+  }
+}
+
 
 .button {
   display: block;
@@ -181,7 +294,6 @@ main {
   background: rgba(255,255,255, 0.75);
   backdrop-filter: blur(5px);
   padding: 1rem;
-  margin-top: -1rem;
   padding-top: 2rem;
   color: #222;
 }
@@ -193,6 +305,25 @@ main p:not(:last-child) {
 }
 
 /* Main Headings */
+main h1 {
+  font-family: 'Calistoga', sans-serif;
+  color: rgba(0, 44, 20, 1);
+  font-size: 2rem;
+  padding: 0 3rem 1rem 3rem;
+  line-height: 2.5rem;
+}
+@media (min-width: 475px) {
+  main h1 {
+    padding: 0 1rem 1rem 1rem;
+  }
+}
+
+.title-heading {
+  text-align: right;
+  padding-bottom: 2rem;
+  padding-right: 0.5rem;
+}
+
 main h2,
 main h3 {
   font-family: 'Calistoga', sans-serif;
@@ -201,8 +332,8 @@ main h3 {
 }
 main:not(.home) h2,
 main:not(.home) h3 {
-  padding-top: 120px;
-  margin-top: -120px;
+  padding-top: 80px;
+  margin-top: -80px;
 }
 
 main h2 .heading,
@@ -312,7 +443,7 @@ h3 a.copylink {
   }
 }
 
-/* Rules - Creative Commons image */
+/* Rules */
 .creativecommons img {
   float: left;
   padding-right: 0.5rem;
@@ -330,6 +461,11 @@ main article ul {
 /* OnTheXDay How it Works list */
 #on-the-x-day {
   text-align: center;
+}
+
+#on-the-x-day h2 {
+  margin-top: 0;
+  padding-top: 0;
 }
 
 #on-the-x-day .how-it-works {
@@ -372,7 +508,7 @@ main article ul {
   list-style: none;
   display: grid;
   border-right: 1px #222 solid;
-  border-bottom: 1px #22 solid;
+  border-bottom: 1px #222 solid;
 }
 
 @media (min-width: 746px) {
@@ -384,7 +520,7 @@ main article ul {
     min-width: 633px;
     display: grid;
     border-right: 1px #222 solid;
-    border-bottom: 1px #22 solid;
+    border-bottom: 1px #222 solid;
 
   }
   .day-of-week,
@@ -409,9 +545,10 @@ main article ul {
 #backToTop {
   display: hidden;
   position: fixed; /* Fixed/sticky position */
-  bottom: 20px; /* Place the button at the bottom of the page */
-  right: 30px; /* Place the button 30px from the right */
-  z-index: 99; /* Make sure it does not overlap */
+  top: 0;
+  left: 50%;
+  margin-left: calc(-132.83px / 2);
+  z-index: 90; /* Make sure it does not overlap */
   outline: none; /* Remove outline */
   cursor: pointer; /* Add a mouse pointer on hover */
 }

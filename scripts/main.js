@@ -1,6 +1,18 @@
-mybutton = document.getElementById("backToTop");
+let topmenu = document.getElementById("full-menu");
+let cover = document.getElementById("cover");
+function openMenu() {
+  if (topmenu.style.display === "block") {
+    topmenu.style.display = "none";
+    cover.style.display = "none";
+  } else {
+    topmenu.style.display = "block";
+    cover.style.display = "block";
+  }
+}
 
 // When the user scrolls down 20px from the top of the document, show the button
+mybutton = document.getElementById("backToTop");
+
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
