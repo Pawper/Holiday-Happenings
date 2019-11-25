@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Calistoga|Lato&display=swap');
 
+/* Resets, body & utilities */
 html {
   box-sizing: border-box;
 }
@@ -12,19 +13,33 @@ html {
   padding: 0;
 }
 
-
 body {
   height: 100%;
   width: calc(100vw - (100vw - 100%));
   overflow-x: hidden;
   font-size: 16px;
-  background: #222;
-  /* background: url(''); */
+  background-color: rgb(0, 0, 51);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='126' height='84' viewBox='0 0 126 84'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ffe700' fill-opacity='0.4'%3E%3Cpath d='M126 83v1H0v-2h40V42H0v-2h40V0h2v40h40V0h2v40h40V0h2v83zm-2-1V42H84v40h40zM82 42H42v40h40V42zm-50-6a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm96 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm-42 0a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm30-12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM20 54a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm12 24a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM8 54a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm24 0a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM8 78a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm12 0a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm54 0a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM50 54a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm24 0a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM50 78a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm54-12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm12 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM92 54a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm24 0a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM92 78a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm24-42a4 4 0 1 1 0-8 4 4 0 0 1 0 8z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); /* from http://www.heropatterns.com/ */
   color: white;
   line-height: 1.3em;
   font-family: 'Lato', sans-serif;
 }
 
+.centeredHorizontally {
+  margin: 0 auto;
+}
+
+.content {
+  width: 800px;
+  max-width: 90%;
+  background: #222;
+  background: url(hicv2017cover.jpg) top no-repeat fixed;
+  margin-top: 1rem;
+  border: goldenrod 1px solid;
+  margin-bottom: 1rem;
+}
+
+/* Abbreviations */
 abbr {
   color: #006600;
   cursor: help;
@@ -35,10 +50,10 @@ abbr:hover,
 a:focus {
   color: #00aa00;
   text-decoration: underline solid;
-  text-decoration-thickness: 2px;
   text-decoration-skip-ink: unset;
 }
 
+/* Links */
 a {
   color: #cc0000;
   text-decoration: underline dotted;
@@ -49,13 +64,11 @@ a:hover,
 a:focus {
   color: #ff0000;
   text-decoration: underline solid;
-  text-decoration-thickness: 2px;
   text-decoration-skip-ink: unset;
 }
 
-header {
-  width: 950px;
-  max-width: 90%;
+/* Top Header & Navigation */
+header.topHeader {
   background: linear-gradient(rgba(34, 34, 34,1) 85%,rgba(34, 34, 34,0));
   padding: 1em;
   position: -webkit-sticky;
@@ -65,10 +78,11 @@ header {
 }
 
 .hero {
-  width: 950px;
-  max-width: 90%;
-  padding: 1em;
-  background: black;
+  padding: 2em;
+  height: 500px;
+  max-height: 100vr;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 nav ul {
@@ -82,7 +96,7 @@ nav ul.internal {
   gap: 3px;
 }
 
-header nav ul {
+header.topHeader nav ul {
   margin-top: 1rem;
 }
 
@@ -91,11 +105,11 @@ nav.rules ul.internal {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  background: #ccc;
   padding-bottom: 1rem;
 }
 nav.rules li {
-  margin: 0.5rem;
+  margin: 0.5rem 1px;
+  flex: 1 1;
 }
 
 nav ul.external {
@@ -146,20 +160,14 @@ nav ul.external {
   transition: box-shadow 0.15s ease-in, transform 0.15s ease-in, border 0.15s ease-in;
 }
 
+/* Main Formatting */
 main {
-  width: 950px;
-  max-width: 90%;
-  background: #ccc;
+  background: rgba(255,255,255, 0.75);
+  backdrop-filter: blur(5px);
   padding: 1rem;
+  margin-top: -1rem;
+  padding-top: 2rem;
   color: #222;
-}
-
-main h2,
-main h3 {
-  margin-bottom: 0.5rem;
-  font-family: 'Calistoga', cursive;
-  padding-top: 50px;
-  margin-top: -50px;
 }
 
 main > section:not(:last-child),
@@ -168,26 +176,146 @@ main p:not(:last-child) {
   margin: 0 0 1rem 0;
 }
 
-.centeredHorizontally {
-  margin: 0 auto;
+/* Main Headings */
+main h2,
+main h3 {
+  font-family: 'Calistoga', sans-serif;
+  padding-bottom: 0.25rem;
+  color: rgba(0, 44, 20, 1);
+}
+main:not(.home) h2,
+main:not(.home) h3 {
+  padding-top: 120px;
+  margin-top: -120px;
 }
 
-footer {
-  margin: 1rem;
+main h2 .heading,
+main h3 .heading {
+  position: relative;
+  padding-top: 0.25em;
+}
+main h2 .heading {
+height: 1.25em;
+}
+main h3 .heading {
+height: 1.5em;
+}
+main h2 .heading:hover,
+main h3 .heading:hover {
+  background: rgba(255,255,255, 0.5);
+  border-bottom: 1px dotted rgb(0, 0, 200);
+}
+
+a.copy-link {
+  position: absolute;
+  display: block;
+  color: rgba(0, 44, 20, 1);
+  text-decoration: none;
+  width: 100%;
+  cursor: pointer;
+  top: 100;
+  left: 0;
+  z-index: 10;
+}
+h2 a.copylink {
+  height: 1.25em;
+}
+h3 a.copylink {
+  height: 1.5em;
+}
+
+.copy-link i {
+  float: right;
+  font-size: 1rem;
+  color: #777;
+}
+
+.copy-link:hover,
+.copy-link:hover > i  {
+  color: rgb(0, 0, 200);
+  text-decoration: none;
+}
+
+/* Home */
+.home {
+  padding: 0;
+}
+
+.home h2 {
+  padding: 2rem 1rem 1rem 1rem;
   text-align: center;
-  font-size: 0.75rem;
 }
 
+.home p {
+  padding: 0 1rem 0 1rem;
+}
+
+.home p:last-of-type {
+  padding-bottom: 1rem;
+}
+
+.box-grid {
+  border-top: 1px black solid;
+  border-bottom: 1px black solid;
+  cursor: pointer;
+  margin: 0 !important;
+  padding: 0;
+}
+.box:nth-child(odd) {
+  background: rgba(0, 0, 45, 0.85);
+  color: #ccc;
+}
+.box:nth-child(even) {
+  background: rgba(0, 44, 20, 0.85);
+  color: #ccc;
+}
+.box:nth-child(odd):hover {
+  background: rgba(0, 0, 45, 1);
+  color: #fff;
+}
+.box:nth-child(even):hover {
+  background: rgba(0, 44, 20, 1);
+  color: #fff;
+}
+.box {
+  text-align: center;
+  padding: 2rem;
+  text-decoration: none;
+}
+.box:hover {
+  text-decoration: none;
+}
+.box i {
+  font-size: 5rem;
+  padding-bottom: 1rem;
+}
+@media (min-width: 600px) {
+  .box-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* Rules - Creative Commons image */
 .creativecommons img {
   float: left;
   padding-right: 0.5rem;
 }
 
+main article ul {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 40px;
+  text-align: left;
+}
+
+/* OnTheXDay How it Works list */
 #on-the-x-day {
   text-align: center;
 }
 
-#community-covenant ul,
 #on-the-x-day .how-it-works {
   margin-top: 1em;
   margin-bottom: 1em;
@@ -205,26 +333,48 @@ footer {
   margin: auto;
 }
 
+/* OnTheXDay Daily Inspiration Calendar */
 .month-indicator {
   background: #222;
   color: #ccc;
   padding: 0.5rem;
+  text-align: left;
 }
-
 .day-of-week {
   background: #ccc;
+  margin: 0;
+  padding: 0;
+  display: none;
 }
 .date-grid {
   background: #222;
   color: #ccc;
+  margin: 0;
+  padding: 0;
 }
-.day-of-week,
 .date-grid {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(7,1fr);
   border-right: 1px #222 solid;
   border-bottom: 1px #22 solid;
+}
+
+@media (min-width: 746px) {
+  .month-indicator {
+    min-width: 633px;
+  }
+  .day-of-week {
+    list-style: none;
+    min-width: 633px;
+    display: grid;
+    border-right: 1px #222 solid;
+    border-bottom: 1px #22 solid;
+
+  }
+  .day-of-week,
+  .date-grid {
+    grid-template-columns: repeat(7,1fr);
+  }
 }
 .day-of-week li,
 .date-grid li {
@@ -239,6 +389,7 @@ footer {
   grid-column: 1; /* Sunday is 1, Saturday is 7 */
 }
 
+/* Rules - Back to Top */
 #backToTop {
   display: hidden;
   position: fixed; /* Fixed/sticky position */
@@ -254,4 +405,57 @@ footer {
   /* line-height: 1rem; */
   padding-right: 0.5rem;
   vertical-align: sub;
+}
+
+/* Footer */
+footer {
+  margin: 1rem;
+  text-align: center;
+  font-size: 0.75rem;
+  background: rgba(0,0,0,0.85);
+  margin: 0;
+  padding: 1rem;
+}
+
+/* Toast */
+#toast {
+  visibility: hidden;
+  width: 250px;
+  margin-left: -125px;
+  background-color: rgba(0,0,0,0.85);
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 1rem;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 2rem;
+  word-wrap: break-word;
+}
+
+#toast.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
 }
