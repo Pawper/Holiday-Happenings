@@ -217,20 +217,14 @@ nav ul {
 }
 
 nav ul.internal {
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 3px;
-}
-
-nav.rules ul.internal {
   margin: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding-bottom: 1rem;
 }
-nav.rules li {
+nav ul.internal li {
   margin: 0.5rem 1px;
-  flex: 1 1;
+  flex: 1 1 0px;
 }
 
 nav ul.external {
@@ -444,6 +438,10 @@ h3 a.copylink {
 }
 
 /* Rules */
+nav.rules {
+  padding-bottom: 1rem;
+}
+
 .creativecommons img {
   float: left;
   padding-right: 0.5rem;
@@ -558,6 +556,46 @@ main article ul {
   /* line-height: 1rem; */
   padding-right: 0.5rem;
   vertical-align: sub;
+}
+
+/* Contact */
+
+/* Contact Form */
+#contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+#contact-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#contact-form abbr[title="required"] {
+  color: red;
+  text-decoration: none;
+}
+
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px #ddd solid;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+#contact-form textarea {
+  height: 200px;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+  outline: none;
+  border-color: #f7c08a;
+}
+
+#contact-form .prounounIsland {
+  font-style: italic;
 }
 
 /* Footer */
