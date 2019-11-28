@@ -232,10 +232,10 @@ nav ul.external {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  max-width: 600px;
+  max-width: 650px;
   margin: auto;
 }
-@media (min-width: 665px) {
+@media (min-width: 710px) {
   nav ul.external {
     display: flex;
   }
