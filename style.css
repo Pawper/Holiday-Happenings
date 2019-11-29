@@ -322,7 +322,7 @@ main h2,
 main h3 {
   font-family: 'Calistoga', sans-serif;
   padding-bottom: 0.25rem;
-  color: rgba(0, 44, 20, 1);
+  color: rgb(0, 44, 20);
 }
 main:not(.home) h2,
 main:not(.home) h3 {
