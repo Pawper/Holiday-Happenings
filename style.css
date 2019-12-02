@@ -330,7 +330,7 @@ main:not(.home) h3 {
   margin-top: -80px;
 }
 
-main h2 .heading,
+/* main h2 .heading,
 main h3 .heading {
   position: relative;
   padding-top: 0.25em;
@@ -340,7 +340,7 @@ height: 1.25em;
 }
 main h3 .heading {
 height: 1.5em;
-}
+} */
 main h2 .heading:hover,
 main h3 .heading:hover {
   background: rgba(255,255,255, 0.5);
@@ -348,7 +348,7 @@ main h3 .heading:hover {
 }
 
 a.copy-link {
-  position: absolute;
+  /* position: absolute; */
   display: block;
   color: rgba(0, 44, 20, 1);
   text-decoration: none;
