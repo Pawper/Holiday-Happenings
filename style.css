@@ -20,7 +20,7 @@ body {
   overflow-x: hidden;
   font-size: 16px;
   background-color: #222;
-  background: url('christmas-dark.png') fixed; /*  This pattern is downloaded from https://www.toptal.com/designers/subtlepatterns/ */
+  background: url('images/christmas-dark.png') fixed; /*  This pattern is downloaded from https://www.toptal.com/designers/subtlepatterns/ */
   color: white;
   line-height: 1.3em;
   font-family: 'Lato', sans-serif;
@@ -34,16 +34,16 @@ body {
   width: 100%;
   max-width: 1200px;
   background: #222;
-  background: url(hicv2017cover_415.jpg) 0px -40px no-repeat fixed;
+  background: url('images/hicv2017cover_415.jpg') 0px -40px no-repeat fixed;
 }
 @media (min-width: 416px) {
   .content {
-    background: url(hicv2017cover.jpg) 0px -40px no-repeat fixed;
+    background: url('images/hicv2017cover.jpg') 0px -40px no-repeat fixed;
   }
 }
 @media (min-width: 800px) {
 .content {
-  background: url(hicv2017cover_1200.jpg) center -160px no-repeat fixed;
+  background: url('images/hicv2017cover_1200.jpg') center -160px no-repeat fixed;
 }
 }
 
@@ -194,7 +194,7 @@ a:focus {
   height: 1000vh;
   width: 100vw;
   position: fixed;
-  background: url('christmas-dark.png'); /*  This pattern is downloaded from https://www.toptal.com/designers/subtlepatterns/ */
+  background: url('images/christmas-dark.png'); /*  This pattern is downloaded from https://www.toptal.com/designers/subtlepatterns/ */
   opacity: 0.95;
   backdrop-filter: blur(5px);
   top: 0;
@@ -330,25 +330,18 @@ main:not(.home) h3 {
   margin-top: -80px;
 }
 
-/* main h2 .heading,
-main h3 .heading {
-  position: relative;
-  padding-top: 0.25em;
+main .heading {
+  margin-bottom: 1px;
+  line-height: initial;
 }
-main h2 .heading {
-height: 1.25em;
-}
-main h3 .heading {
-height: 1.5em;
-} */
 main h2 .heading:hover,
 main h3 .heading:hover {
   background: rgba(255,255,255, 0.5);
   border-bottom: 1px dotted rgb(0, 0, 200);
+  margin-bottom: 0px;
 }
 
 a.copy-link {
-  /* position: absolute; */
   display: block;
   color: rgba(0, 44, 20, 1);
   text-decoration: none;
@@ -596,6 +589,57 @@ main article ul {
 
 #contact-form .prounounIsland {
   font-style: italic;
+}
+
+/* Download Page */
+#downloads-page p {
+  overflow: hidden;
+}
+.download-thumb {
+  display: block;
+  width: 200px;
+  height: 160px;
+  margin: 0.4rem auto 0.5rem auto;
+  border: 1px white solid;
+  padding-top: 120px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.download-thumb:hover,
+.download-thumb:focus {
+  text-decoration: none;
+}
+.clr {
+  clear: left;
+}
+.download-thumb .button.action {
+  margin: auto;
+  padding: 0.25rem 1rem;
+  pointer-events: none;
+}
+.download-thumb:hover .button.action,
+.download-thumb:focus .button.action {
+  background: linear-gradient(rgba(0, 0, 85,1),rgba(0,0,51,1));
+  border: 2px solid white;
+  box-shadow: 0px 2px 15px 0px rgba(174, 200, 255, 0.75);
+  transform: translate(0px, -2px);
+  transition: box-shadow 0.15s ease-in, transform 0.15s ease-in, border 0.15s ease-in;
+  color: white;
+}
+@media (min-width: 475px) {
+  .download-thumb {
+    float: left;
+    margin-right: 1rem;
+  }
+}
+#hicv2016-thumb {
+  background: url('images/hicv2016_thumb.png') center / cover no-repeat;
+}
+#hicv2017-thumb {
+  background: url('images/hicv2017_thumb.png') center / cover no-repeat;
+}
+#hh2019-thumb {
+  background: url('images/hh_2019_thumb.png') center / cover no-repeat;
 }
 
 /* Footer */
