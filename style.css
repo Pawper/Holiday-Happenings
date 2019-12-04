@@ -140,7 +140,8 @@ a:focus {
   transition: box-shadow 0.15s ease-in, transform 0.15s ease-in, border 0.15s ease-in;
 }
 .fa-bars:active,
-.fa-bars:hover {
+.fa-bars:hover, 
+.menu-button:focus .fa-bars {
   background: linear-gradient(rgba(0, 0, 85,1),rgba(0,0,51,1));
   border: 2px solid white;
   box-shadow: 0px 2px 15px 0px rgba(174, 200, 255, 0.75);
@@ -319,13 +320,15 @@ main h1 {
 }
 
 main h2,
-main h3 {
+main h3,
+main h4 {
   font-family: 'Calistoga', sans-serif;
   padding-bottom: 0.25rem;
   color: rgb(0, 44, 20);
 }
 main:not(.home) h2,
-main:not(.home) h3 {
+main:not(.home) h3,
+main:not(.home) h4 {
   padding-top: 80px;
   margin-top: -80px;
 }
@@ -335,7 +338,8 @@ main .heading {
   line-height: initial;
 }
 main h2 .heading:hover,
-main h3 .heading:hover {
+main h3 .heading:hover,
+main h4 .heading:hover {
   background: rgba(255,255,255, 0.5);
   border-bottom: 1px dotted rgb(0, 0, 200);
   margin-bottom: 0px;
@@ -355,6 +359,9 @@ h2 a.copylink {
   height: 1.25em;
 }
 h3 a.copylink {
+  height: 1.5em;
+}
+h4 a.copylink {
   height: 1.5em;
 }
 
@@ -592,8 +599,9 @@ main article ul {
 }
 
 /* Download Page */
-#downloads-page p {
+.wrapper {
   overflow: hidden;
+  margin-bottom: 1rem;
 }
 .download-thumb {
   display: block;
@@ -640,6 +648,33 @@ main article ul {
 }
 #hh2019-thumb {
   background: url('images/hh_2019_thumb.png') center / cover no-repeat;
+}
+
+/* Staff */
+.staff {
+  display: inline-block;
+}
+
+.staff h4 {
+  padding-bottom: 1rem;
+}
+
+.portrait {
+  float: left;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+.portrait img {
+  width: 100%;
+  height: auto;
+  margin-top: -15px;
+}
+.name-and-title {
+  font-weight: bold;
 }
 
 /* Footer */
