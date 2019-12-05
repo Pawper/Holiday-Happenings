@@ -438,10 +438,6 @@ h4 a.copylink {
 }
 
 /* Rules */
-nav.rules {
-  padding-bottom: 1rem;
-}
-
 .creativecommons img {
   float: left;
   padding-right: 0.5rem;
@@ -634,7 +630,7 @@ main article ul {
   transition: box-shadow 0.15s ease-in, transform 0.15s ease-in, border 0.15s ease-in;
   color: white;
 }
-@media (min-width: 475px) {
+@media (min-width: 746px) {
   .download-thumb {
     float: left;
     margin-right: 1rem;
@@ -650,6 +646,54 @@ main article ul {
   background: url('images/hh_2019_thumb.png') center / cover no-repeat;
 }
 
+/* Contents */
+#table-of-contents {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  background-color: rgba(255,255,255, 0.5);
+  border: 1px solid white;
+}
+#table-of-contents ul {
+  padding-left: 1rem;
+  display: block;
+}
+#table-of-contents ul ul,
+#table-of-contents ol ul { 
+  margin-left: 1rem; 
+  margin-bottom: 0;
+  padding-bottom: 0;
+  display: block;
+}
+#table-of-contents ol ol,
+#table-of-contents ul ol { 
+  margin-left: 1rem; 
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+#table-of-contents li {
+  padding: 0.25rem 0;
+  border-collapse: collapse;
+}
+
+
+#table-of-contents li:not(:first-child) {
+  border-top: 1px dotted;
+}
+#table-of-contents li:not(:empty):not(:last-child) {
+  border-bottom: 1px dotted;
+}
+/* #table-of-contents li:first-child {
+  border-bottom: 1px dotted;
+}
+#table-of-contents li:not(:first-child):not(:nth-child(2)) {
+  border-top: 1px dotted;
+} */
+
+#table-of-contents a:not(:hover) {
+  text-decoration: none;
+}
+
 /* Staff */
 .staff {
   display: inline-block;
@@ -659,7 +703,7 @@ main article ul {
   padding-bottom: 1rem;
 }
 
-.portrait {
+.photo {
   float: left;
   position: relative;
   width: 100px;
@@ -667,12 +711,19 @@ main article ul {
   overflow: hidden;
   border-radius: 50%;
   margin-right: 1rem;
+  margin-bottom: 1rem;
 }
-.portrait img {
+.photo.portrait img {
   width: 100%;
   height: auto;
   margin-top: -15px;
 }
+.photo.landscape img {
+  width: auto;
+  height: 100%;
+  margin-left: -25px;
+}
+
 .name-and-title {
   font-weight: bold;
 }

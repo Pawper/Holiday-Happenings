@@ -48,3 +48,40 @@ function copyLink(clicked_element)
   toast.className = "show";
   setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 2900);
 }
+
+// Table of contents
+let ToC = "<nav role='navigation' class='table-of-contents' aria-hidden='true'><h4>On this page:</h4><ul>";
+let headingDivs = document.querySelectorAll('.heading');
+var newLine, headingText, headingID, headingLevel, currentLevel, listItemStart, listItemEnd;
+let hierarchy = [];
+for (var i = 0; i < headingDivs.length; i++) {
+  headingText = (headingDivs[i].firstElementChild.textContent).trim();
+  headingID = "#" + headingDivs[i].parentElement.id;
+  headingLevel = headingDivs[i].parentElement.tagName[headingDivs[i].parentElement.tagName.length-1];
+  hierarchy.push(headingDivs[i].parentElement.tagName[headingDivs[i].parentElement.tagName.length-1]);
+  
+  if (i === 0 || hierarchy[i] === hierarchy[i - 1]) {
+    var listItemStart = "<li>";
+    var listItemEnd = "</li>";
+  } else if (hierarchy[i] > hierarchy[i - 1]) {
+    var listItemStart = "<ul><li>";
+    var listItemEnd = "</li>";
+  } else if (hierarchy[i] < hierarchy[i - 1]) {
+    var listItemStart = "</ul><li>";
+    var listItemEnd = "</li>";
+  };
+
+  newLine =
+  listItemStart
+   +
+  "<a href='" + headingID + "'>" +
+  headingText + 
+  "</a>" +
+  listItemEnd
+
+  ToC += newLine;
+
+}
+ToC += "</ul></nav>"
+document.getElementById("table-of-contents").innerHTML = ToC;
+console.log(listItemStart);
