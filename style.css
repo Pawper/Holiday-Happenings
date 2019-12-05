@@ -22,7 +22,7 @@ body {
   background-color: #222;
   background: url('images/christmas-dark.png') fixed; /*  This pattern is downloaded from https://www.toptal.com/designers/subtlepatterns/ */
   color: white;
-  line-height: 1.3em;
+  line-height: 1.5em;
   font-family: 'Lato', sans-serif;
 }
 
@@ -33,18 +33,35 @@ body {
 .content {
   width: 100%;
   max-width: 1200px;
+  min-height: 100vh;
   background: #222;
   background: url('images/hicv2017cover_415.jpg') 0px -40px no-repeat fixed;
 }
 @media (min-width: 416px) {
   .content {
     background: url('images/hicv2017cover.jpg') 0px -40px no-repeat fixed;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
   }
+}
+@media (min-width: 700px) {
+.content {
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  box-shadow: 0 0 30px black;
+}
 }
 @media (min-width: 800px) {
 .content {
   background: url('images/hicv2017cover_1200.jpg') center -160px no-repeat fixed;
 }
+}
+
+main:not(.home),
+.home section:not(.box-grid) {
+  width: calc(70ch + 2rem);
+  max-width: 100%;
+  margin: auto;
 }
 
 /* Abbreviations */
@@ -255,6 +272,15 @@ nav ul.external {
   line-height: 1.5rem;
 }
 
+.sectionButtons {
+  text-align: center;
+  padding-bottom: 1rem;
+}
+.sectionButtons .button {
+  display: inline-block;
+  padding: 1rem 2rem;
+}
+
 .button:hover,
 .button:focus,
 .button.current {
@@ -291,6 +317,7 @@ main {
   padding: 1rem;
   padding-top: 2rem;
   color: #222;
+  min-height: calc(100vh - 3.5rem);
 }
 
 main > section:not(:last-child),
@@ -673,23 +700,13 @@ main article ul {
 }
 #table-of-contents li {
   padding: 0.25rem 0;
-  border-collapse: collapse;
 }
-
-
-#table-of-contents li:not(:first-child) {
+#table-of-contents ul + li:not(:first-child) {
   border-top: 1px dotted;
 }
-#table-of-contents li:not(:empty):not(:last-child) {
+#table-of-contents li:not(:last-child) {
   border-bottom: 1px dotted;
 }
-/* #table-of-contents li:first-child {
-  border-bottom: 1px dotted;
-}
-#table-of-contents li:not(:first-child):not(:nth-child(2)) {
-  border-top: 1px dotted;
-} */
-
 #table-of-contents a:not(:hover) {
   text-decoration: none;
 }
@@ -698,11 +715,9 @@ main article ul {
 .staff {
   display: inline-block;
 }
-
 .staff h4 {
   padding-bottom: 1rem;
 }
-
 .photo {
   float: left;
   position: relative;

@@ -11,9 +11,10 @@ function openMenu() {
 }
 
 // When the user scrolls down 20px from the top of the document, show the button
-mybutton = document.getElementById("backToTop");
-
-window.onscroll = function() {scrollFunction()};
+function scrollStart() {
+  mybutton = document.getElementById("backToTop");
+  window.onscroll = function() {scrollFunction()};
+}
 
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -50,38 +51,31 @@ function copyLink(clicked_element)
 }
 
 // Table of contents
-let ToC = "<nav role='navigation' class='table-of-contents' aria-hidden='true'><h4>On this page:</h4><ul>";
-let headingDivs = document.querySelectorAll('.heading');
-var newLine, headingText, headingID, headingLevel, currentLevel, listItemStart, listItemEnd;
-let hierarchy = [];
-for (var i = 0; i < headingDivs.length; i++) {
-  headingText = (headingDivs[i].firstElementChild.textContent).trim();
-  headingID = "#" + headingDivs[i].parentElement.id;
-  headingLevel = headingDivs[i].parentElement.tagName[headingDivs[i].parentElement.tagName.length-1];
-  hierarchy.push(headingDivs[i].parentElement.tagName[headingDivs[i].parentElement.tagName.length-1]);
-  
-  if (i === 0 || hierarchy[i] === hierarchy[i - 1]) {
-    var listItemStart = "<li>";
-    var listItemEnd = "</li>";
-  } else if (hierarchy[i] > hierarchy[i - 1]) {
-    var listItemStart = "<ul><li>";
-    var listItemEnd = "</li>";
-  } else if (hierarchy[i] < hierarchy[i - 1]) {
-    var listItemStart = "</ul><li>";
-    var listItemEnd = "</li>";
-  };
-
-  newLine =
-  listItemStart
-   +
-  "<a href='" + headingID + "'>" +
-  headingText + 
-  "</a>" +
-  listItemEnd
-
-  ToC += newLine;
-
+function contentsStart() {
+  let ToC = "<nav role='navigation' class='table-of-contents' aria-hidden='true'><h4>On this page:</h4><ul>";
+  let headingDivs = document.querySelectorAll('.heading');
+  var newLine, headingText, headingID, headingLevel, currentLevel, listItemStart, listItemEnd;
+  let hierarchy = [];
+  for (var i = 0; i < headingDivs.length; i++) {
+    headingText = (headingDivs[i].firstElementChild.textContent).trim();
+    headingID = "#" + headingDivs[i].parentElement.id;
+    headingLevel = headingDivs[i].parentElement.tagName[headingDivs[i].parentElement.tagName.length-1];
+    hierarchy.push(headingDivs[i].parentElement.tagName[headingDivs[i].parentElement.tagName.length-1]);
+    
+    if (i === 0 || hierarchy[i] === hierarchy[i - 1]) {
+      var listItemStart = "<li>";
+      var listItemEnd = "</li>";
+    } else if (hierarchy[i] > hierarchy[i - 1]) {
+      var listItemStart = "<ul><li>";
+      var listItemEnd = "</li>";
+    } else if (hierarchy[i] < hierarchy[i - 1]) {
+      var listItemStart = "</ul><li>";
+      var listItemEnd = "</li>";
+    };
+    newLine = listItemStart + "<a href='" + headingID + "'>" + headingText + "</a>" +
+    listItemEnd
+    ToC += newLine;
+  }
+  ToC += "</ul></nav>"
+  document.getElementById("table-of-contents").innerHTML = ToC;
 }
-ToC += "</ul></nav>"
-document.getElementById("table-of-contents").innerHTML = ToC;
-console.log(listItemStart);
