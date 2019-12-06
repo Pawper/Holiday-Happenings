@@ -78,4 +78,8 @@ function contentsStart() {
   }
   ToC += "</ul></nav>"
   document.getElementById("table-of-contents").innerHTML = ToC;
+  if (location.hash) {
+    let target = location.hash;
+    window.scrollTop = document.querySelector(target).offsetTop;
+}
 }
